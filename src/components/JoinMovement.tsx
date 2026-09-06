@@ -1,16 +1,96 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import {
+  FormEvent,
+  useState,
+} from "react";
+
+import {
+  ArrowRight,
+  CheckCircle2,
+  LoaderCircle,
+} from "lucide-react";
+
+type Status =
+  | "idle"
+  | "loading"
+  | "success"
+  | "error";
 
 export default function JoinMovement() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] =
+    useState<Status>("idle");
 
-  function handleSubmit(
-    event: React.FormEvent<HTMLFormElement>
+  const [message, setMessage] =
+    useState("");
+
+  async function handleSubmit(
+    event: FormEvent<HTMLFormElement>
   ) {
     event.preventDefault();
-    setSubmitted(true);
+
+    setStatus("loading");
+    setMessage("");
+
+    const form = event.currentTarget;
+
+    const formData =
+      new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      whatsapp: formData.get("whatsapp"),
+      city: formData.get("city"),
+      website: formData.get("website"),
+    };
+
+    try {
+      const response = await fetch(
+        "/api/join",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error ||
+            "Unable to submit."
+        );
+      }
+
+      setStatus("success");
+
+      if (data.alreadyJoined) {
+        setMessage(
+          "You're already part of the movement."
+        );
+      } else {
+        setMessage(
+          "You're officially on the list."
+        );
+
+        form.reset();
+      }
+    } catch (error) {
+      setStatus("error");
+
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong."
+      );
+    }
   }
 
   return (
@@ -35,31 +115,60 @@ export default function JoinMovement() {
           </h2>
 
           <p className="mt-7 max-w-lg text-base font-medium leading-relaxed text-black/65">
-            Get early ticket access, location drops,
-            lineup announcements and private Ravewithlonex
-            updates before everybody else.
+            Get early ticket access,
+            location drops, lineup
+            announcements and private
+            Ravewithlonex updates before
+            everybody else.
           </p>
         </div>
 
         <div className="flex items-end">
-          {submitted ? (
+          {status === "success" ? (
             <div className="w-full border-y border-black/25 py-12">
+              <CheckCircle2
+                size={38}
+                className="mb-5"
+              />
+
               <p className="font-display text-5xl">
                 YOU&apos;RE ON THE LIST.
               </p>
 
               <p className="mt-3 text-black/60">
-                Welcome to the movement.
+                {message}
               </p>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setStatus("idle");
+                  setMessage("");
+                }}
+                className="mt-7 border-b border-black pb-1 text-xs font-black uppercase tracking-[0.2em]"
+              >
+                Add Another Person
+              </button>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
               className="w-full"
             >
+              {/* Spam trap */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
+
               <input
                 required
                 type="text"
+                name="name"
+                maxLength={100}
                 placeholder="YOUR NAME"
                 className="w-full border-b border-black/30 bg-transparent py-5 text-sm font-bold outline-none placeholder:text-black/45 focus:border-black"
               />
@@ -67,28 +176,50 @@ export default function JoinMovement() {
               <input
                 required
                 type="email"
+                name="email"
                 placeholder="EMAIL ADDRESS"
                 className="w-full border-b border-black/30 bg-transparent py-5 text-sm font-bold outline-none placeholder:text-black/45 focus:border-black"
               />
 
               <input
                 type="tel"
+                name="whatsapp"
+                maxLength={40}
                 placeholder="WHATSAPP NUMBER"
                 className="w-full border-b border-black/30 bg-transparent py-5 text-sm font-bold outline-none placeholder:text-black/45 focus:border-black"
               />
 
               <input
                 type="text"
+                name="city"
+                maxLength={100}
                 placeholder="CITY"
                 className="w-full border-b border-black/30 bg-transparent py-5 text-sm font-bold outline-none placeholder:text-black/45 focus:border-black"
               />
 
+              {status === "error" && (
+                <p className="mt-4 text-sm font-bold">
+                  {message}
+                </p>
+              )}
+
               <button
+                disabled={status === "loading"}
                 type="submit"
-                className="mt-8 flex w-full items-center justify-between bg-black px-6 py-5 text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-black"
+                className="mt-8 flex w-full items-center justify-between bg-black px-6 py-5 text-xs font-black uppercase tracking-[0.2em] text-white transition hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Join The Movement
-                <ArrowRight size={18} />
+                {status === "loading"
+                  ? "Joining..."
+                  : "Join The Movement"}
+
+                {status === "loading" ? (
+                  <LoaderCircle
+                    size={18}
+                    className="animate-spin"
+                  />
+                ) : (
+                  <ArrowRight size={18} />
+                )}
               </button>
             </form>
           )}

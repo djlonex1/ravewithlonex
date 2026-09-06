@@ -8,6 +8,7 @@ import {
 
 import { siteConfig } from "@/data/site";
 import Reveal from "./Reveal";
+import InquiryForm from "./InquiryForm";
 
 export default function ContactSection() {
   return (
@@ -15,11 +16,13 @@ export default function ContactSection() {
       id="contact"
       className="relative overflow-hidden bg-[#070707] px-5 py-28 md:px-10 md:py-40"
     >
+      {/* BACKGROUND RW */}
       <div className="absolute left-[-8%] top-10 font-display text-[28vw] leading-none text-white/[0.015]">
         RW
       </div>
 
       <div className="relative mx-auto max-w-[1500px]">
+        {/* HEADING */}
         <Reveal>
           <div className="mb-16">
             <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
@@ -31,6 +34,7 @@ export default function ContactSection() {
               <br />
               CREATE
               <br />
+
               <span className="yellow-stroke">
                 SOMETHING.
               </span>
@@ -38,8 +42,9 @@ export default function ContactSection() {
           </div>
         </Reveal>
 
+        {/* CONTACT CARDS */}
         <div className="grid gap-4 lg:grid-cols-3">
-          {/* SPONSORSHIP */}
+          {/* PARTNERSHIP */}
           <Reveal>
             <div className="group flex min-h-[370px] flex-col justify-between border border-white/10 bg-[#0c0c0c] p-7 transition duration-500 hover:border-[#efff00]/60 md:p-9">
               <div className="flex items-start justify-between">
@@ -67,7 +72,7 @@ export default function ContactSection() {
                 </p>
 
                 <a
-                  href="#join"
+                  href="#contact-form"
                   className="mt-8 inline-flex items-center gap-3 border-b border-[#efff00] pb-2 text-xs font-black uppercase tracking-[0.18em] text-[#efff00]"
                 >
                   Partner With Us
@@ -77,7 +82,7 @@ export default function ContactSection() {
             </div>
           </Reveal>
 
-          {/* BOOKINGS */}
+          {/* DJ BOOKING */}
           <Reveal delay={0.1}>
             <div className="group flex min-h-[370px] flex-col justify-between border border-white/10 bg-[#0c0c0c] p-7 transition duration-500 hover:border-[#efff00]/60 md:p-9">
               <div className="flex items-start justify-between">
@@ -104,9 +109,7 @@ export default function ContactSection() {
                 </p>
 
                 <a
-                  href={siteConfig.socials.djInstagram}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#contact-form"
                   className="mt-8 inline-flex items-center gap-3 border-b border-[#efff00] pb-2 text-xs font-black uppercase tracking-[0.18em] text-[#efff00]"
                 >
                   Booking Enquiry
@@ -153,6 +156,7 @@ export default function ContactSection() {
           </Reveal>
         </div>
 
+        {/* GENERAL CONTACT BUTTON */}
         <Reveal>
           <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-10 md:flex-row md:items-center md:justify-between">
             <div>
@@ -166,14 +170,40 @@ export default function ContactSection() {
             </div>
 
             <a
-              href={siteConfig.socials.instagram}
-              target="_blank"
-              rel="noreferrer"
+              href="#contact-form"
               className="rave-button inline-flex items-center justify-center gap-3 bg-[#efff00] px-7 py-5 text-xs font-black uppercase tracking-[0.2em] text-black"
             >
               Contact The Team
               <Mail size={17} />
             </a>
+          </div>
+        </Reveal>
+
+        {/* REAL CONTACT FORM */}
+        <Reveal>
+          <div
+            id="contact-form"
+            className="mt-24 grid gap-12 border-t border-white/10 pt-16 lg:grid-cols-[.8fr_1.2fr]"
+          >
+            <div>
+              <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
+                Get In Touch
+              </p>
+
+              <h3 className="font-display text-6xl leading-[0.85] md:text-7xl">
+                TALK
+                <br />
+                TO US.
+              </h3>
+
+              <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/40">
+                Sponsorship, partnerships,
+                DJ bookings or general
+                Ravewithlonex enquiries.
+              </p>
+            </div>
+
+            <InquiryForm />
           </div>
         </Reveal>
       </div>

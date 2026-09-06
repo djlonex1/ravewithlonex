@@ -1,5 +1,5 @@
 "use client";
-
+import { siteConfig } from "@/data/site";
 import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
@@ -80,12 +80,20 @@ export default function Hero() {
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href="#tickets"
-                className="rave-button flex items-center justify-center gap-2 bg-[#efff00] px-6 py-4 text-xs font-black uppercase tracking-[0.18em] text-black transition hover:bg-white sm:justify-start"
-              >
-                Get Tickets
-                <ArrowUpRight size={17} />
-              </a>
+  href={siteConfig.ticketUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rave-button inline-flex min-h-[54px] items-center justify-center gap-3 px-7 py-4 text-xs font-black uppercase tracking-[0.18em]"
+>
+  <span className="relative z-10">
+    Get Tickets
+  </span>
+
+  <ArrowUpRight
+    size={18}
+    className="relative z-10"
+  />
+</a>
 
               <a
                 href="#movement"

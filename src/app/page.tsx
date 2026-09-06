@@ -6,6 +6,7 @@ import {
   MapPin,
 } from "lucide-react";
 
+import { siteConfig } from "@/data/site";
 import ContactSection from "@/components/ContactSection";
 import PageLoader from "@/components/PageLoader";
 import CustomCursor from "@/components/CustomCursor";
@@ -344,16 +345,20 @@ export default function Home() {
               className="flex items-center"
             >
               <a
-                href="#join"
-                className="group flex w-full items-center justify-between bg-[#efff00] px-6 py-5 text-xs font-black uppercase tracking-[0.18em] text-black transition hover:bg-white"
-              >
-                Get Ticket Access
+  href={siteConfig.ticketUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rave-button group flex min-h-[60px] w-full items-center justify-between bg-[#efff00] px-6 py-5 text-xs font-black uppercase tracking-[0.18em] text-black transition hover:bg-white"
+>
+  <span className="relative z-10">
+    Get Tickets
+  </span>
 
-                <ArrowUpRight
-                  size={19}
-                  className="transition group-hover:-translate-y-1 group-hover:translate-x-1"
-                />
-              </a>
+  <ArrowUpRight
+    size={19}
+    className="relative z-10 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+  />
+</a>
             </Reveal>
           </div>
 
