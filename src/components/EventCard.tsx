@@ -13,7 +13,7 @@ export default function EventCard({
   return (
     <a
       href={event.href}
-      className="rave-glow group relative block min-h-[520px] overflow-hidden border border-white/10 bg-[#0c0c0c] transition duration-500 hover:border-[#efff00]/50"
+      className="always-dark rave-glow group relative block min-h-[520px] overflow-hidden border border-white/10 bg-[#0c0c0c] transition duration-500 hover:border-[#efff00]/50"
     >
       <div
         className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"

@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   {
@@ -55,6 +56,10 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
+
+          <ThemeToggle />
+
+
 
           <a
             href="#tickets"

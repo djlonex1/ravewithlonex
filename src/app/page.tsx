@@ -241,7 +241,7 @@ export default function Home() {
                 className={item.size}
               >
                 <div
-  className={`image-noise group relative overflow-hidden bg-[#111] ${item.height}`}
+  className={`always-dark image-noise group relative overflow-hidden bg-[#111] ${item.height}`}
 >
                   <div
                     className="absolute inset-0 bg-cover bg-center grayscale transition duration-[1200ms] ease-out group-hover:scale-110 group-hover:grayscale-0"
@@ -269,7 +269,7 @@ export default function Home() {
       {/* TICKETS */}
       <section
         id="tickets"
-        className="relative overflow-hidden bg-[#0a0a0a] px-5 py-28 md:px-10 md:py-40"
+        className="always-dark relative overflow-hidden bg-[#0a0a0a] px-5 py-28 md:px-10 md:py-40"
       >
         <div className="absolute right-[-5%] top-0 font-display text-[30vw] leading-none text-white/[0.015]">
           09

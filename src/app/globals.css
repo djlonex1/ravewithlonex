@@ -114,3 +114,251 @@ body {
     cursor: pointer;
   }
 }
+
+
+/* ========================================
+   RAVEWITHLONEX LIGHT / DARK THEME
+======================================== */
+
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================
+   LIGHT MODE FOUNDATION
+========================= */
+
+html.light body {
+  background: #f3f1e8;
+  color: #090909;
+}
+
+/* Main neutral backgrounds */
+
+html.light .bg-black {
+  background-color: #f3f1e8 !important;
+}
+
+html.light [class*="bg-[#080808]"],
+html.light [class*="bg-[#070707]"],
+html.light [class*="bg-[#0a0a0a]"],
+html.light [class*="bg-[#0c0c0c]"],
+html.light [class*="bg-[#111]"] {
+  background-color: #fffef7 !important;
+}
+
+/* =========================
+   LIGHT MODE TYPOGRAPHY
+========================= */
+
+html.light .text-white {
+  color: #090909 !important;
+}
+
+html.light [class*="text-white/"] {
+  color: rgba(9, 9, 9, 0.62) !important;
+}
+
+html.light [class*="border-white/"] {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Outlined typography needs dark outline */
+
+html.light .text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.75);
+}
+
+/* Yellow outline remains part of brand */
+
+html.light .yellow-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px #efff00;
+}
+
+/* Light mode grid */
+
+html.light .grid-background {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.055) 1px,
+      transparent 1px
+    );
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+html.light header {
+  background: rgba(243, 241, 232, 0.88) !important;
+  color: #090909;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light header nav a {
+  color: rgba(0, 0, 0, 0.62) !important;
+}
+
+html.light header nav a:hover {
+  color: #111 !important;
+}
+
+/* =========================
+   ALWAYS DARK AREAS
+   Hero / photos / event cards / tickets
+========================= */
+
+html.light .always-dark {
+  color: #ffffff;
+}
+
+/* Force backgrounds inside always-dark areas back to dark */
+
+html.light .always-dark.bg-black {
+  background-color: #000 !important;
+}
+
+html.light .always-dark[class*="bg-[#0a0a0a]"],
+html.light .always-dark[class*="bg-[#0c0c0c]"],
+html.light .always-dark[class*="bg-[#111]"] {
+  background-color: #0a0a0a !important;
+}
+
+/* White text must remain white inside dark/image sections */
+
+html.light .always-dark .text-white,
+html.light .always-dark.text-white {
+  color: #fff !important;
+}
+
+html.light .always-dark [class*="text-white/"],
+html.light .always-dark[class*="text-white/"] {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+html.light .always-dark [class*="border-white/"],
+html.light .always-dark[class*="border-white/"] {
+  border-color: rgba(255, 255, 255, 0.17) !important;
+}
+
+/* Keep outlined text readable inside dark areas */
+
+html.light .always-dark .text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.75);
+}
+
+/* Hero must always look like rave/night mode */
+
+html.light #home {
+  color: #fff;
+}
+
+html.light #home .text-white {
+  color: #fff !important;
+}
+
+html.light #home [class*="text-white/"] {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+html.light #home [class*="border-white/"] {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* =========================
+   BRAND YELLOW
+========================= */
+
+html.light .bg-\[\#efff00\] {
+  background-color: #efff00 !important;
+}
+
+html.light .text-\[\#efff00\] {
+  color: #efff00 !important;
+}
+
+/* Black text on yellow must stay black */
+
+html.light .bg-\[\#efff00\].text-black,
+html.light .bg-\[\#efff00\] .text-black {
+  color: #000 !important;
+}
+
+/* =========================
+   FORM CONTROLS
+========================= */
+
+html.light input,
+html.light textarea,
+html.light select {
+  color: #090909;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: rgba(0, 0, 0, 0.42) !important;
+}
+
+html.light select {
+  background-color: #fffef7 !important;
+}
+
+/* Join Movement is yellow, so keep its fields dark */
+
+html.light #join input,
+html.light #join textarea,
+html.light #join select {
+  color: #000;
+}
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+  color: inherit;
+}
+
+html.light .theme-toggle {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #090909;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+html.light ::-webkit-scrollbar-track {
+  background: #f3f1e8;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+/* =========================
+   NOISE
+========================= */
+
+html.light body::before {
+  opacity: 0.025;
+  filter: invert(1);
+}
