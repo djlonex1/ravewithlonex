@@ -194,13 +194,13 @@ export default function Home() {
       </section>
 
       {/* STATEMENT */}
-      <section className="overflow-hidden bg-[#efff00] py-16 text-black">
-        <Reveal>
-          <p className="font-display whitespace-nowrap text-center text-[17vw] leading-none tracking-[-0.04em]">
-            YOU HAD TO BE THERE.
-          </p>
-        </Reveal>
-      </section>
+      <section className="bg-[#efff00] px-4 py-16 text-black">
+  <Reveal>
+    <p className="font-display mx-auto max-w-full text-center text-[14vw] leading-[0.85] tracking-[-0.04em] sm:text-[12vw] lg:text-[9vw]">
+      YOU HAD TO BE THERE.
+    </p>
+  </Reveal>
+</section>
 
       {/* EXPERIENCE */}
       <section
