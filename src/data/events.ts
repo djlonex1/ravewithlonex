@@ -13,7 +13,7 @@ export const events: RaveEvent[] = [
     date: "09 OCT 2026",
     location: "FLORIDA KING'S, EDE",
     status: "NEXT RAVE",
-    image: "/images/last-dance.jpg",
+    image: "/images/last-dance-card.jpg",
     href: "#tickets",
   },
   {
