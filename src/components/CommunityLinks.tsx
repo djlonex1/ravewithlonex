@@ -49,6 +49,15 @@ export default function CommunityLinks() {
       </div>
 
       <a
+        href="tel:+2348146675314"
+        className="mt-3 flex min-h-14 items-center gap-3 border border-white/10 px-5 text-xs font-bold uppercase tracking-[0.15em] text-white/55 transition hover:border-[#efff00]/50 hover:text-white"
+      >
+        <Phone size={17} className="text-[#efff00]" />
+
+        Call Business Line — 08146675314
+      </a>
+
+      <a
         href="tel:+2349073687106"
         className="mt-3 flex min-h-14 items-center gap-3 border border-white/10 px-5 text-xs font-bold uppercase tracking-[0.15em] text-white/55 transition hover:border-[#efff00]/50 hover:text-white"
       >

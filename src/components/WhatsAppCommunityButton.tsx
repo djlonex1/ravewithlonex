@@ -14,6 +14,9 @@ const COMMUNITY_URL =
 const BUSINESS_WHATSAPP =
   "https://wa.me/2348146675314";
 
+const BUSINESS_CALL =
+  "tel:+2348146675314";
+
 const CALL_NUMBER =
   "tel:+2349073687106";
 
@@ -59,6 +62,22 @@ export default function WhatsAppCommunityButton() {
 
         <span className="sm:hidden">
           WhatsApp
+        </span>
+      </a>
+
+      <a
+        href={BUSINESS_CALL}
+        aria-label="Call Ravewithlonex business line"
+        className="flex items-center gap-3 border border-white/15 bg-black/95 px-4 py-3 text-[10px] font-black uppercase tracking-[0.15em] text-white shadow-xl backdrop-blur-md transition hover:border-[#efff00] hover:text-[#efff00]"
+      >
+        <Phone size={17} />
+
+        <span className="hidden sm:inline">
+          Call 08146675314
+        </span>
+
+        <span className="sm:hidden">
+          Call Business
         </span>
       </a>
 
