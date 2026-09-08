@@ -103,56 +103,107 @@ export default function Home() {
       </div>
 
       {/* MOVEMENT */}
+
       <section
         id="movement"
-        className="grid-background relative px-5 py-28 md:px-10 md:py-40"
+        className="grid-background relative bg-[var(--bg)] px-5 py-28 md:px-10 md:py-40"
       >
         <div className="mx-auto max-w-[1500px]">
           <Reveal>
-            <div className="mb-16 flex items-center gap-3">
-              <span className="h-[2px] w-10 bg-[#efff00]" />
+            <div className="flex items-center justify-between border-b border-[var(--border)] pb-6">
+              <div className="flex items-center gap-3">
+                <span className="h-2 w-2 bg-[#efff00]" />
 
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
-                The Movement
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#efff00]">
+                  The Movement
+                </span>
+              </div>
+
+              <span className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--muted)]">
+                RWL / EST. FOR THE NIGHT
               </span>
             </div>
           </Reveal>
 
-          <div className="grid gap-16 lg:grid-cols-[1.5fr_.5fr]">
+          <div className="mt-14 grid gap-14 lg:grid-cols-[1.25fr_.75fr] lg:gap-24">
             <Reveal>
-              <h2 className="font-display text-[16vw] leading-[0.78] tracking-[-0.03em] sm:text-[13vw] lg:text-[9vw]">
-                WE DON&apos;T
-                <br />
-                THROW
-                <br />
-                <span className="text-stroke">
-                  PARTIES.
-                </span>
-              </h2>
+              <div>
+                <p className="mb-6 max-w-xl text-sm font-bold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Not another party brand.
+                </p>
+
+                <h2 className="font-display text-[16vw] leading-[0.74] tracking-[-0.04em] sm:text-[12vw] lg:text-[8.2vw]">
+                  BUILT
+                  <br />
+                  FOR THE
+                  <br />
+                  <span className="text-stroke">
+                    NIGHT.
+                  </span>
+                </h2>
+              </div>
             </Reveal>
 
             <Reveal
-              delay={0.15}
+              delay={0.12}
               className="flex flex-col justify-end"
             >
-              <p className="text-xl leading-relaxed text-white/60">
-                We create nights people remember.
+              <p className="text-xl leading-relaxed text-[var(--muted)] md:text-2xl">
+                We create nights people remember long after
+                the lights come back on.
               </p>
 
-              <p className="mt-6 leading-relaxed text-white/40">
-                Ravewithlonex brings music, people,
-                nightlife and culture together to create
-                experiences built around freedom,
-                connection and pure energy.
+              <p className="mt-6 max-w-xl text-sm leading-relaxed text-[var(--muted)]">
+                Ravewithlonex brings music, people and culture
+                into the same room — creating spaces built for
+                freedom, connection and real energy.
               </p>
 
-              <div className="mt-10 border-l-2 border-[#efff00] pl-5 font-display text-3xl">
-                MORE THAN A PARTY.
-                <br />
-                IT&apos;S A MOVEMENT.
+              <div className="mt-10 divide-y divide-[var(--border)] border-y border-[var(--border)]">
+                <div className="flex items-center justify-between py-4">
+                  <span className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--muted)]">
+                    01
+                  </span>
+
+                  <span className="font-display text-2xl">
+                    MUSIC
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between py-4">
+                  <span className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--muted)]">
+                    02
+                  </span>
+
+                  <span className="font-display text-2xl">
+                    PEOPLE
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between py-4">
+                  <span className="text-[9px] font-black uppercase tracking-[0.24em] text-[var(--muted)]">
+                    03
+                  </span>
+
+                  <span className="font-display text-2xl">
+                    ENERGY
+                  </span>
+                </div>
               </div>
             </Reveal>
           </div>
+
+          <Reveal>
+            <div className="mt-20 flex flex-col justify-between gap-5 bg-[#efff00] px-5 py-6 text-black sm:flex-row sm:items-center md:px-7">
+              <p className="font-display text-3xl leading-none sm:text-4xl">
+                MORE THAN A PARTY.
+              </p>
+
+              <p className="text-[10px] font-black uppercase tracking-[0.22em]">
+                IT&apos;S A MOVEMENT →
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

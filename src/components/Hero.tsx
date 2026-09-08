@@ -1,7 +1,13 @@
 "use client";
+
 import { siteConfig } from "@/data/site";
 import { motion } from "motion/react";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  CalendarDays,
+  MapPin,
+} from "lucide-react";
 
 import Countdown from "./Countdown";
 import AnimatedTitle from "./AnimatedTitle";
@@ -10,142 +16,232 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="always-dark relative flex min-h-dvh items-end overflow-hidden bg-black"
+      className="always-dark relative flex min-h-dvh overflow-hidden bg-black text-white"
     >
-      {/* HERO BACKGROUND */}
       <div
-        className="absolute inset-0 bg-cover bg-[center_30%]"
+        className="absolute inset-0 scale-[1.01] bg-cover bg-[center_30%]"
         style={{
           backgroundImage: `
             linear-gradient(
               to bottom,
-              rgba(0,0,0,.25),
-              rgba(0,0,0,.55) 45%,
-              rgba(0,0,0,1)
+              rgba(0,0,0,.18) 0%,
+              rgba(0,0,0,.36) 38%,
+              rgba(0,0,0,.82) 72%,
+              rgba(0,0,0,1) 100%
             ),
             url('/images/hero.jpg')
           `,
         }}
       />
 
-      {/* YELLOW GLOW */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_40%,rgba(239,255,0,0.13),transparent_35%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_30%,rgba(239,255,0,0.11),transparent_32%)]" />
 
-      {/* HERO CONTENT */}
+      <div className="pointer-events-none absolute inset-x-0 top-20 h-px bg-white/10" />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.4 }}
-        className="relative z-10 mx-auto w-full max-w-[1500px] px-5 pb-10 pt-32 sm:pt-36 md:px-10 md:pb-16 md:pt-40"
+        transition={{
+          duration: 1.1,
+          ease: "easeOut",
+        }}
+        className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1500px] flex-col px-5 pb-7 pt-28 md:px-10 md:pb-10 md:pt-32"
       >
-        {/* SMALL TOP LABEL */}
         <motion.div
           initial={{
             opacity: 0,
-            y: 20,
+            y: 12,
           }}
           animate={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            delay: 0.25,
+            delay: 0.15,
           }}
-          className="mb-6 flex items-center gap-3"
+          className="flex items-center justify-between gap-6"
         >
-          <span className="h-[2px] w-10 bg-[#efff00]" />
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 bg-[#efff00]" />
 
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#efff00]">
-            Nigeria&apos;s Rave Movement
-          </span>
-        </motion.div>
-
-        {/* ANIMATED MAIN TITLE */}
-        <AnimatedTitle />
-
-        {/* LOWER HERO CONTENT */}
-        <div className="mt-8 grid gap-10 border-t border-white/15 pt-7 md:mt-10 md:pt-8 lg:grid-cols-[1fr_1.1fr] lg:items-end">
-          {/* LEFT SIDE */}
-          <div>
-            <p className="max-w-lg text-lg leading-relaxed text-white/60 md:text-xl">
-              More than a party.
-              <br />
-              Music. Energy. Culture. Chaos.
-              <br />
-
-              <span className="text-white">
-                Welcome to the movement.
-              </span>
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a
-  href={siteConfig.ticketUrl}
-  target="_blank"
-  rel="noreferrer"
-  className="rave-button inline-flex min-h-[54px] items-center justify-center gap-3 px-7 py-4 text-xs font-black uppercase tracking-[0.18em]"
->
-  <span className="relative z-10">
-    Get Tickets
-  </span>
-
-  <ArrowUpRight
-    size={18}
-    className="relative z-10"
-  />
-</a>
-
-              <a
-                href="#movement"
-                className="glitch-hover flex items-center justify-center gap-2 border border-white/30 px-6 py-4 text-xs font-black uppercase tracking-[0.18em] transition hover:border-[#efff00] hover:text-[#efff00] sm:justify-start"
-              >
-                Explore
-                <ArrowDown size={17} />
-              </a>
-            </div>
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#efff00] sm:text-[10px]">
+              Nigeria&apos;s Rave Movement
+            </span>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="lg:border-l lg:border-white/15 lg:pl-10">
-            {/* UPCOMING BADGE */}
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#efff00]/30 bg-[#efff00]/10 px-3 py-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#efff00] opacity-60" />
+          <div className="hidden items-center gap-3 text-[9px] font-bold uppercase tracking-[0.22em] text-white/40 sm:flex">
+            <span>09 OCT 2026</span>
+            <span className="h-1 w-1 bg-white/30" />
+            <span>EDE, NIGERIA</span>
+          </div>
+        </motion.div>
 
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#efff00]" />
-              </span>
+        <div className="flex flex-1 flex-col justify-end">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.85,
+            }}
+            className="mt-10"
+          >
+            <AnimatedTitle />
+          </motion.div>
 
-              <span className="text-[9px] font-black uppercase tracking-[0.22em] text-[#efff00]">
-                Upcoming
-              </span>
-            </div>
+          <div className="mt-8 grid border-t border-white/15 pt-7 lg:grid-cols-[1.15fr_.85fr] lg:gap-12 lg:pt-8">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.4,
+              }}
+              className="flex flex-col justify-between"
+            >
+              <div>
+                <p className="max-w-xl text-base leading-relaxed text-white/55 sm:text-lg md:text-xl">
+                  More than a party.
+                  <br />
+                  Music. Energy. Culture. Chaos.
+                  <br />
+                  <span className="font-semibold text-white">
+                    Welcome to the movement.
+                  </span>
+                </p>
 
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-white/40">
-              Next Experience
-            </p>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <a
+                    href={siteConfig.ticketUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rave-button inline-flex min-h-[56px] items-center justify-center gap-3 px-7 py-4 text-xs font-black uppercase tracking-[0.18em]"
+                  >
+                    <span className="relative z-10">
+                      Get Tickets
+                    </span>
 
-            <h2 className="font-display text-5xl leading-none md:text-7xl">
-              THE LAST
-              <br />
+                    <ArrowUpRight
+                      size={18}
+                      className="relative z-10"
+                    />
+                  </a>
 
-              <span className="text-[#efff00]">
-                DANCE
-              </span>
-            </h2>
+                  <a
+                    href="#movement"
+                    className="group inline-flex min-h-[56px] items-center justify-center gap-3 border border-white/20 bg-black/20 px-7 py-4 text-xs font-black uppercase tracking-[0.18em] backdrop-blur-sm transition hover:border-white/50"
+                  >
+                    Discover RWL
 
-            <div className="my-7 flex flex-wrap gap-x-8 gap-y-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-              <span>09 OCT 2026</span>
+                    <ArrowDown
+                      size={17}
+                      className="transition group-hover:translate-y-1"
+                    />
+                  </a>
+                </div>
+              </div>
 
-              <span>
-                Florida King&apos;s, Ede
-              </span>
+              <p className="mt-8 hidden text-[9px] font-black uppercase tracking-[0.28em] text-white/25 lg:block">
+                Music • Energy • Culture • Connection
+              </p>
+            </motion.div>
 
-              <span>
-                9PM — Till Dawn
-              </span>
-            </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 20,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                delay: 0.48,
+              }}
+              className="mt-10 border border-white/15 bg-black/40 p-5 backdrop-blur-md sm:p-6 lg:mt-0"
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping bg-[#efff00] opacity-50" />
+                      <span className="relative inline-flex h-2 w-2 bg-[#efff00]" />
+                    </span>
 
-            <Countdown targetDate="2026-10-09T21:00:00+01:00" />
+                    <span className="text-[9px] font-black uppercase tracking-[0.24em] text-[#efff00]">
+                      Next Experience
+                    </span>
+                  </div>
+
+                  <h2 className="mt-5 font-display text-5xl leading-[0.84] sm:text-6xl">
+                    THE LAST
+                    <br />
+                    <span className="text-[#efff00]">
+                      DANCE
+                    </span>
+                  </h2>
+                </div>
+
+                <span className="font-display text-5xl leading-none text-white/[0.08]">
+                  01
+                </span>
+              </div>
+
+              <div className="mt-7 grid gap-3 border-y border-white/10 py-5 sm:grid-cols-2">
+                <div className="flex items-start gap-3">
+                  <CalendarDays
+                    size={17}
+                    className="mt-0.5 shrink-0 text-[#efff00]"
+                  />
+
+                  <div>
+                    <p className="text-[8px] font-black uppercase tracking-[0.22em] text-white/30">
+                      Date
+                    </p>
+
+                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em]">
+                      09 OCT 2026
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin
+                    size={17}
+                    className="mt-0.5 shrink-0 text-[#efff00]"
+                  />
+
+                  <div>
+                    <p className="text-[8px] font-black uppercase tracking-[0.22em] text-white/30">
+                      Venue
+                    </p>
+
+                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em]">
+                      Florida King&apos;s, Ede
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <p className="mb-3 text-[8px] font-black uppercase tracking-[0.24em] text-white/25">
+                  Countdown to the night
+                </p>
+
+                <Countdown targetDate="2026-10-09T21:00:00+01:00" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

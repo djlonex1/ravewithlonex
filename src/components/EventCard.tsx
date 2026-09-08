@@ -1,61 +1,124 @@
 import { ArrowUpRight } from "lucide-react";
+
 import type { RaveEvent } from "@/lib/events-db";
 
 type EventCardProps = {
   event: RaveEvent;
   number: string;
+  variant?: "featured" | "standard" | "past";
 };
 
 export default function EventCard({
   event,
   number,
+  variant = "standard",
 }: EventCardProps) {
+  const featured =
+    variant === "featured";
+
+  const past =
+    variant === "past";
+
+  const height = featured
+    ? "min-h-[580px] md:min-h-[680px]"
+    : past
+      ? "min-h-[430px] md:min-h-[480px]"
+      : "min-h-[520px] md:min-h-[580px]";
+
   return (
     <a
       href={event.href}
-      className="always-dark rave-glow group relative block min-h-[520px] overflow-hidden border border-white/10 bg-[#0c0c0c] transition duration-500 hover:border-[#efff00]/50"
+      aria-label={`View ${event.title}`}
+      className={`always-dark group relative block overflow-hidden border border-white/10 bg-[#0b0b0b] text-white transition duration-500 hover:border-[#efff00]/50 ${height}`}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
+        className="absolute inset-0 bg-cover bg-center transition duration-[900ms] ease-out group-hover:scale-[1.035]"
         style={{
-          backgroundImage: `
-            linear-gradient(
-              to top,
-              rgba(0,0,0,1),
-              rgba(0,0,0,.3) 60%,
-              rgba(0,0,0,.25)
-            ),
-            url('${event.image}')
-          `,
+          backgroundImage: `url('${event.image}')`,
         }}
       />
 
-      <div className="absolute inset-0 bg-[#efff00]/0 transition duration-500 group-hover:bg-[#efff00]/10" />
+      <div
+        className={`absolute inset-0 ${
+          featured
+            ? "bg-gradient-to-t from-black via-black/35 to-black/10"
+            : "bg-gradient-to-t from-black via-black/45 to-black/20"
+        }`}
+      />
 
-      <div className="relative flex min-h-[520px] flex-col justify-between p-6 md:p-8">
-        <div className="flex items-start justify-between">
-          <span className="font-display text-4xl text-white/25">
+      <div className="absolute inset-0 bg-[#efff00]/0 transition duration-500 group-hover:bg-[#efff00]/[0.04]" />
+
+      <div className={`relative flex h-full flex-col justify-between ${height}`}>
+        <div className="flex items-start justify-between p-5 md:p-7">
+          <span className="border border-white/15 bg-black/35 px-3 py-2 text-[9px] font-black uppercase tracking-[0.22em] text-white/55 backdrop-blur-sm">
             {number}
           </span>
 
-          <ArrowUpRight
-            size={28}
-            className="transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#efff00]"
-          />
+          <span className="flex h-11 w-11 items-center justify-center border border-white/15 bg-black/35 backdrop-blur-sm transition duration-300 group-hover:border-[#efff00] group-hover:bg-[#efff00] group-hover:text-black">
+            <ArrowUpRight
+              size={19}
+              className="transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </span>
         </div>
 
-        <div>
-          <div className="mb-4 inline-block bg-[#efff00] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-black">
+        <div
+          className={
+            featured
+              ? "p-5 md:p-8 lg:max-w-5xl"
+              : "p-5 md:p-7"
+          }
+        >
+          <div className="mb-4 inline-flex bg-[#efff00] px-3 py-2 text-[9px] font-black uppercase tracking-[0.2em] text-black">
             {event.status}
           </div>
 
-          <h3 className="font-display text-5xl leading-[0.9] md:text-6xl">
+          <h3
+            className={`font-display tracking-[-0.02em] ${
+              featured
+                ? "max-w-5xl text-6xl leading-[0.8] sm:text-7xl md:text-8xl lg:text-[7.5rem]"
+                : past
+                  ? "text-4xl leading-[0.86] sm:text-5xl"
+                  : "text-5xl leading-[0.85] sm:text-6xl"
+            }`}
+          >
             {event.title}
           </h3>
 
-          <div className="mt-5 flex flex-wrap gap-5 border-t border-white/20 pt-5 text-xs font-bold uppercase tracking-[0.15em] text-white/60">
-            <span>{event.date}</span>
-            <span>{event.location}</span>
+          <div
+            className={`mt-6 flex flex-wrap border-t border-white/20 pt-5 ${
+              featured
+                ? "gap-x-10 gap-y-3"
+                : "gap-5"
+            }`}
+          >
+            <div>
+              <p className="text-[8px] font-black uppercase tracking-[0.2em] text-white/30">
+                Date
+              </p>
+
+              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.12em] text-white/80">
+                {event.date}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-[8px] font-black uppercase tracking-[0.2em] text-white/30">
+                Location
+              </p>
+
+              <p className="mt-1 text-[11px] font-black uppercase tracking-[0.12em] text-white/80">
+                {event.location}
+              </p>
+            </div>
+
+            {featured && (
+              <div className="ml-auto hidden items-end md:flex">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#efff00]">
+                  View Experience →
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
