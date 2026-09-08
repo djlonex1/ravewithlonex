@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="always-dark relative flex min-h-screen items-end overflow-hidden bg-black"
+      className="always-dark relative flex min-h-dvh items-end overflow-hidden bg-black"
     >
       {/* HERO BACKGROUND */}
       <div

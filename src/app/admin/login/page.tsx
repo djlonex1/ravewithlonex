@@ -5,7 +5,7 @@ import AdminLoginForm from "@/components/admin/AdminLoginForm";
 
 export default function AdminLoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-black px-5 py-16 text-white">
+    <main className="flex min-h-dvh items-center justify-center bg-black px-5 py-16 text-white">
       <div className="w-full max-w-md">
         <Link
           href="/"

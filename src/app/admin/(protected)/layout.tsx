@@ -49,7 +49,7 @@ export default async function ProtectedAdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#070707] text-white">
+    <div className="min-h-dvh bg-[#070707] text-white">
       <header className="border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-5 md:px-8">
           <div>

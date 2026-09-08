@@ -28,7 +28,7 @@ export default async function UnsubscribePage({
       );
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-black px-5 text-white">
+    <main className="flex min-h-dvh items-center justify-center bg-black px-5 text-white">
       <div className="w-full max-w-xl border border-white/10 p-8 text-center md:p-12">
         <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#efff00]">
           Ravewithlonex
