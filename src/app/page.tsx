@@ -261,7 +261,7 @@ export default function Home() {
   className={`always-dark image-noise group relative overflow-hidden bg-[#111] ${item.height}`}
 >
                   <div
-                    className="absolute inset-0 bg-cover bg-center grayscale transition duration-[1200ms] ease-out group-hover:scale-110 group-hover:grayscale-0"
+                    className="absolute inset-0 bg-cover bg-center transition duration-[1200ms] ease-out group-hover:scale-110 md:grayscale md:group-hover:grayscale-0"
                     style={{
                       backgroundImage: `
                         linear-gradient(
