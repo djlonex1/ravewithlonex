@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import WhatsAppCommunityButton from "@/components/WhatsAppCommunityButton";
 
 const anton = Anton({
   weight: "400",
@@ -105,6 +106,7 @@ export default function RootLayout({
         <ThemeProvider>{children}</ThemeProvider>
               <Analytics />
         <SpeedInsights />
+              <WhatsAppCommunityButton />
       </body>
     </html>
   );
