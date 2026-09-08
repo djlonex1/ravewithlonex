@@ -11,6 +11,8 @@ import {
   LoaderCircle,
 } from "lucide-react";
 
+import CommunityLinks from "@/components/CommunityLinks";
+
 type Status =
   | "idle"
   | "loading"
@@ -225,6 +227,10 @@ export default function JoinMovement() {
           )}
         </div>
       </div>
-    </section>
+          <div className="mx-auto mt-10 max-w-[1500px]">
+        <CommunityLinks />
+      </div>
+
+</section>
   );
 }
