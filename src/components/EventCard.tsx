@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import type { RaveEvent } from "@/data/events";
+import type { RaveEvent } from "@/lib/events-db";
 
 type EventCardProps = {
   event: RaveEvent;

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const anton = Anton({
   weight: "400",
@@ -101,6 +103,8 @@ export default function RootLayout({
         className={`${anton.variable} ${inter.variable}`}
       >
         <ThemeProvider>{children}</ThemeProvider>
+              <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

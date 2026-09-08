@@ -13,10 +13,10 @@ import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
-import EventCard from "@/components/EventCard";
 import JoinMovement from "@/components/JoinMovement";
 import Footer from "@/components/Footer";
-import { events } from "@/data/events";
+import EventsSection from "@/components/EventsSection";
+import AnnouncementBannerServer from "@/components/AnnouncementBannerServer";
 
 const gallery = [
   {
@@ -71,12 +71,17 @@ const gallery = [
   },
 ];
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <PageLoader />
 <CustomCursor />
       <Navbar />
+
+      <AnnouncementBannerServer />
 
       <Hero />
 
@@ -152,46 +157,7 @@ export default function Home() {
       </section>
 
       {/* EVENTS */}
-      <section
-        id="events"
-        className="bg-[#080808] px-5 py-28 md:px-10 md:py-40"
-      >
-        <div className="mx-auto max-w-[1500px]">
-          <Reveal>
-            <div className="mb-16 flex items-end justify-between">
-              <div>
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
-                  Nights We Created
-                </p>
-
-                <h2 className="font-display text-7xl leading-none sm:text-8xl lg:text-[9rem]">
-                  EVENTS.
-                </h2>
-              </div>
-
-              <p className="hidden max-w-xs text-right text-sm leading-relaxed text-white/40 md:block">
-                Every night has its own story.
-                <br />
-                Every crowd leaves a memory.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-4 lg:grid-cols-3">
-            {events.map((event, index) => (
-              <Reveal
-                key={event.title}
-                delay={index * 0.1}
-              >
-                <EventCard
-                  event={event}
-                  number={`0${index + 1}`}
-                />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <EventsSection />
 
       {/* STATEMENT */}
       <section className="bg-[#efff00] px-4 py-16 text-black">
