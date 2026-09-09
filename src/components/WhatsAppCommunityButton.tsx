@@ -5,6 +5,7 @@ import {
   Phone,
   PhoneCall,
   Plus,
+  Sparkles,
   Users,
 } from "lucide-react";
 
@@ -18,6 +19,9 @@ import { useEffect, useState } from "react";
 
 const COMMUNITY_URL =
   "https://chat.whatsapp.com/FYavPrewOTLHZkTbzMjoz4?mode=gi_t";
+
+const SNAPCHAT_MOVEMENT =
+  "https://snapchat.com/t/QNnWLkRG";
 
 const BUSINESS_WHATSAPP =
   "https://wa.me/2348146675314?text=Hi%20Ravewithlonex%2C%20I%20would%20like%20to%20make%20an%20enquiry.";
@@ -35,6 +39,13 @@ const actions = [
     href: COMMUNITY_URL,
     external: true,
     icon: Users,
+  },
+  {
+    label: "Snapchat Movement",
+    sublabel: "Join Ravewithlonex on Snapchat",
+    href: SNAPCHAT_MOVEMENT,
+    external: true,
+    icon: Sparkles,
   },
   {
     label: "Business WhatsApp",

@@ -3,6 +3,7 @@ import {
   MessageCircle,
   Phone,
   PhoneCall,
+  Sparkles,
   Users,
 } from "lucide-react";
 
@@ -11,6 +12,9 @@ const COMMUNITY_URL =
 
 const BUSINESS_WHATSAPP =
   "https://wa.me/2348146675314?text=Hi%20Ravewithlonex%2C%20I%20would%20like%20to%20make%20an%20enquiry.";
+
+const SNAPCHAT_URL =
+  "https://snapchat.com/t/QNnWLkRG";
 
 export default function CommunityLinks() {
   return (
@@ -70,7 +74,7 @@ export default function CommunityLinks() {
       </a>
 
       {/* CONTACT OPTIONS */}
-      <div className="mt-3 grid gap-3 md:grid-cols-3">
+      <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
 
         <a
           href={BUSINESS_WHATSAPP}
@@ -100,6 +104,38 @@ export default function CommunityLinks() {
 
             <p className="mt-2 text-sm font-semibold text-black/60">
               08146675314
+            </p>
+          </div>
+        </a>
+
+        <a
+          href={SNAPCHAT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group rounded-[20px] bg-[#efff00] p-5 text-black transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(239,255,0,0.15)]"
+        >
+          <div className="flex items-start justify-between">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-[#efff00]">
+              <Sparkles size={18} />
+            </div>
+
+            <ArrowUpRight
+              size={18}
+              className="text-black/35 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black"
+            />
+          </div>
+
+          <div className="mt-8">
+            <p className="text-[10px] font-black uppercase tracking-[0.18em] text-black/45">
+              Snapchat
+            </p>
+
+            <h5 className="mt-2 text-lg font-black text-black">
+              Join on Snapchat
+            </h5>
+
+            <p className="mt-2 text-sm font-semibold text-black/60">
+              Ravewithlonex Movement
             </p>
           </div>
         </a>
