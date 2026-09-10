@@ -106,7 +106,7 @@ export default function Home() {
 
       <section
         id="movement"
-        className="always-dark grid-background relative bg-[#120d1b] px-5 py-28 text-[#f3f0e8] md:px-10 md:py-40"
+        className="grid-background relative bg-[var(--bg)] px-5 py-28 md:px-10 md:py-40"
       >
         <div className="mx-auto max-w-[1500px]">
           <Reveal>
@@ -211,7 +211,7 @@ export default function Home() {
       <EventsSection />
 
       {/* STATEMENT */}
-      <section className="relative overflow-hidden border-y-4 border-[#efff00] bg-[#f3f0e8] px-4 py-16 text-[#24163d] md:py-20">
+      <section className="bg-[#efff00] px-4 py-16 text-black">
   <Reveal>
     <p className="font-display mx-auto max-w-full text-center text-[14vw] leading-[0.85] tracking-[-0.04em] sm:text-[12vw] lg:text-[9vw]">
       YOU HAD TO BE THERE.
@@ -222,37 +222,25 @@ export default function Home() {
       {/* EXPERIENCE */}
       <section
         id="experience"
-        className="always-dark relative overflow-hidden bg-[#050505] px-5 py-28 text-white md:px-10 md:py-40"
+        className="bg-black px-5 py-28 md:px-10 md:py-40"
       >
-        <div className="pointer-events-none absolute right-[-12%] top-[8%] h-[520px] w-[520px] rounded-full bg-[#7657ff]/10 blur-[140px]" />
-
-        <div className="pointer-events-none absolute bottom-[5%] left-[-10%] h-[460px] w-[460px] rounded-full bg-[#24163d]/30 blur-[130px]" />
-
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#7657ff_30%,#efff00_70%,transparent)] opacity-70" />
-
-        <div className="relative mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-[1500px]">
           <Reveal>
             <div className="mb-16 grid gap-10 lg:grid-cols-2">
               <div>
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#f3f0e8]">
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
                   Inside The Rave
                 </p>
 
-                <div className="flex items-start gap-4">
-                  <span className="mt-3 hidden h-16 w-[3px] bg-[#efff00] sm:block" />
-
-                  <h2 className="font-display text-7xl leading-[0.85] tracking-[-0.03em] sm:text-8xl lg:text-[9rem]">
-                    THE
-                    <br />
-                    <span className="text-[#f3f0e8]">
-                      EXPERIENCE.
-                    </span>
-                  </h2>
-                </div>
+                <h2 className="font-display text-7xl leading-[0.85] sm:text-8xl lg:text-[9rem]">
+                  THE
+                  <br />
+                  EXPERIENCE.
+                </h2>
               </div>
 
               <div className="flex items-end">
-                <p className="max-w-lg border-l border-[#7657ff]/50 pl-5 text-lg leading-relaxed text-white/60 md:text-xl">
+                <p className="max-w-lg text-xl leading-relaxed text-white/45">
                   No staged moments. No fake energy.
                   Just music, sweat, lights, people and
                   memories made somewhere between the
@@ -270,13 +258,7 @@ export default function Home() {
                 className={item.size}
               >
                 <div
-  className={`always-dark image-noise group relative overflow-hidden border bg-[#111] transition duration-500 ${
-  index % 4 === 0
-    ? "border-[#7657ff]/45"
-    : index % 4 === 1
-      ? "border-[#efff00]/25"
-      : "border-white/10"
-} ${item.height}`}
+  className={`always-dark image-noise group relative overflow-hidden bg-[#111] ${item.height}`}
 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition duration-[1200ms] ease-out group-hover:scale-110 md:grayscale md:group-hover:grayscale-0"
@@ -291,12 +273,8 @@ export default function Home() {
                     }}
                   />
 
-                  <div className="absolute bottom-5 left-5 flex items-center gap-3">
-                    <span className="h-px w-6 bg-[#efff00]" />
-
-                    <span className="font-display text-2xl text-[#f3f0e8]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                  <div className="absolute bottom-5 left-5 font-display text-2xl text-white/80">
+                    0{index + 1}
                   </div>
                 </div>
               </Reveal>
@@ -308,27 +286,17 @@ export default function Home() {
       {/* TICKETS */}
       <section
         id="tickets"
-        className="always-dark relative overflow-hidden bg-[linear-gradient(135deg,#120d1b_0%,#09070d_48%,#050505_100%)] px-5 py-28 text-white md:px-10 md:py-40"
+        className="always-dark relative overflow-hidden bg-[#0a0a0a] px-5 py-28 md:px-10 md:py-40"
       >
-        <div className="pointer-events-none absolute right-[-10%] top-[5%] h-[560px] w-[560px] rounded-full bg-[#7657ff]/15 blur-[150px]" />
-
-        <div className="pointer-events-none absolute bottom-[-20%] left-[10%] h-[480px] w-[480px] rounded-full bg-[#efff00]/[0.045] blur-[150px]" />
-
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-[linear-gradient(90deg,#efff00_0%,#efff00_35%,#7657ff_72%,transparent_100%)]" />
-
-        <div className="absolute right-[-5%] top-0 font-display text-[30vw] leading-none text-[#7657ff]/[0.045]">
+        <div className="absolute right-[-5%] top-0 font-display text-[30vw] leading-none text-white/[0.015]">
           09
         </div>
 
         <div className="relative mx-auto max-w-[1500px]">
           <Reveal>
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-2 w-2 bg-[#efff00]" />
-
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#efff00]">
-                Next Experience / 09.10.26
-              </p>
-            </div>
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#efff00]">
+              Next Experience
+            </p>
 
             <h2 className="font-display text-[18vw] leading-[0.73] tracking-[-0.03em] sm:text-[14vw] lg:text-[10vw]">
               THE LAST
@@ -340,13 +308,13 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-16 grid gap-8 border border-[#7657ff]/25 bg-black/30 px-5 py-7 shadow-[0_35px_100px_rgba(36,22,61,0.25)] backdrop-blur-sm md:px-7 md:py-9 lg:grid-cols-4">
+          <div className="mt-16 grid gap-10 border-y border-white/15 py-10 lg:grid-cols-4">
             <Reveal>
               <div className="flex gap-4">
                 <CalendarDays className="text-[#efff00]" />
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f3f0e8]/45">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
                     Date
                   </p>
 
@@ -362,7 +330,7 @@ export default function Home() {
                 <MapPin className="text-[#efff00]" />
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f3f0e8]/45">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
                     Location
                   </p>
 
@@ -378,7 +346,7 @@ export default function Home() {
                 <Clock className="text-[#efff00]" />
 
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#f3f0e8]/45">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
                     Doors
                   </p>
 

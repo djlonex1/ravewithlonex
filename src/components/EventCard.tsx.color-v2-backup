@@ -41,8 +41,8 @@ export default function EventCard({
       <div
         className={`absolute inset-0 ${
           featured
-            ? "bg-gradient-to-t from-[#24163d] via-black/45 to-black/10"
-            : "bg-gradient-to-t from-[#181022] via-black/55 to-black/20"
+            ? "bg-gradient-to-t from-black via-black/35 to-black/10"
+            : "bg-gradient-to-t from-black via-black/45 to-black/20"
         }`}
       />
 

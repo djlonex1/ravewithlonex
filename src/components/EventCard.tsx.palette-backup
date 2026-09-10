@@ -29,7 +29,7 @@ export default function EventCard({
     <a
       href={event.href}
       aria-label={`View ${event.title}`}
-      className={`always-dark group relative block overflow-hidden border border-white/10 bg-[#0b0b0b] text-white transition duration-500 hover:border-[#efff00]/50 hover:shadow-[0_28px_90px_rgba(36,22,61,0.28)] hover:shadow-[0_28px_90px_rgba(36,22,61,0.28)] ${height}`}
+      className={`always-dark group relative block overflow-hidden border border-white/10 bg-[#0b0b0b] text-white transition duration-500 hover:border-[#efff00]/50 ${height}`}
     >
       <div
         className="absolute inset-0 bg-cover bg-center transition duration-[900ms] ease-out group-hover:scale-[1.035]"
@@ -41,8 +41,8 @@ export default function EventCard({
       <div
         className={`absolute inset-0 ${
           featured
-            ? "bg-gradient-to-t from-[#24163d] via-black/45 to-black/10"
-            : "bg-gradient-to-t from-[#181022] via-black/55 to-black/20"
+            ? "bg-gradient-to-t from-black via-black/35 to-black/10"
+            : "bg-gradient-to-t from-black via-black/45 to-black/20"
         }`}
       />
 

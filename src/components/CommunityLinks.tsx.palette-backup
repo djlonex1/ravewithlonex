@@ -18,7 +18,7 @@ const SNAPCHAT_URL =
 
 export default function CommunityLinks() {
   return (
-    <section className="mt-10 overflow-hidden rounded-[28px] border border-white/10 bg-[#0b0910] p-3 sm:p-4">
+    <section className="mt-10 overflow-hidden rounded-[28px] border border-white/10 bg-[#111] p-3 sm:p-4">
 
       {/* HEADER */}
       <div className="flex flex-col gap-4 px-3 pb-6 pt-3 sm:flex-row sm:items-end sm:justify-between sm:px-5 sm:pt-5">
@@ -80,7 +80,7 @@ export default function CommunityLinks() {
           href={BUSINESS_WHATSAPP}
           target="_blank"
           rel="noopener noreferrer"
-          className="group rounded-[20px] bg-[#f3f0e8] p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#efff00]"
+          className="group rounded-[20px] bg-white p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#f5f5f5]"
         >
           <div className="flex items-start justify-between">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-[#efff00]">
@@ -142,7 +142,7 @@ export default function CommunityLinks() {
 
         <a
           href="tel:+2348146675314"
-          className="group rounded-[20px] bg-[#f3f0e8] p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#efff00]"
+          className="group rounded-[20px] bg-white p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#f5f5f5]"
         >
           <div className="flex items-start justify-between">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-[#efff00]">
@@ -172,7 +172,7 @@ export default function CommunityLinks() {
 
         <a
           href="tel:+2349073687106"
-          className="group rounded-[20px] bg-[#f3f0e8] p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#efff00]"
+          className="group rounded-[20px] bg-white p-5 text-black transition duration-300 hover:-translate-y-1 hover:bg-[#f5f5f5]"
         >
           <div className="flex items-start justify-between">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-[#efff00]">
